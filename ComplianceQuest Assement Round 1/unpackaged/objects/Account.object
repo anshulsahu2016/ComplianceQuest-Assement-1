@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Account_Activation_Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Activation Summary</label>
+        <length>3000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Company_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Company Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <validationRules>
+        <fullName>Account_Activation_Summary_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( Active__c =true , ISBLANK( Account_Activation_Summary__c ))</errorConditionFormula>
+        <errorDisplayField>Account_Activation_Summary__c</errorDisplayField>
+        <errorMessage>While activating account, Account Activation Summary must be
+filled in.</errorMessage>
+    </validationRules>
+</CustomObject>
